@@ -1,0 +1,5 @@
+qa/
+qa-revised/
+*.pdf
+.DS_Store
+Thumbs.db
