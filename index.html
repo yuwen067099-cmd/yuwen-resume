@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>曾語文 Rachel Tseng｜互動式職涯儀表板</title>
   <style>
-    :root{color-scheme:light;--navy:#173568;--blue:#1766a3;--sky:#dceefa;--gold:#d89a35;--ink:#172536;--muted:#53657a;--line:#d8e1ea;--paper:#f5f8fc;--white:#fff}
+    :root{color-scheme:light;--navy:#17364d;--blue:#168a89;--sky:#def3f1;--gold:#df7747;--ink:#172b3b;--muted:#5a6d79;--line:#d9e5e7;--paper:#f2f7f7;--white:#fff}
     *{box-sizing:border-box}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
     button{font:inherit}
     .wrap{max-width:1120px;margin:0 auto;padding:24px}
-    header,.panel,.metric{background:var(--white);border:1px solid var(--line);border-radius:14px}
-    header{display:flex;justify-content:space-between;gap:20px;align-items:start;padding:25px 28px}
+    header,.panel,.metric{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 34px rgba(23,54,77,.07)}
+    header{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:25px 28px;background:linear-gradient(135deg,#fff 0 72%,#edf8f7)}
+    .profile-photo{width:106px;height:106px;border-radius:50%;object-fit:cover;border:6px solid #e3f2f1;box-shadow:0 8px 22px rgba(23,54,77,.16)}
     h1,h2,h3,p{margin-top:0}
     h1{color:var(--navy);font-size:clamp(24px,3vw,34px);line-height:1.2;margin-bottom:8px}
     h2{color:var(--navy);font-size:20px;margin-bottom:14px}
@@ -21,7 +22,7 @@
     .contact div+div{margin-top:4px}
     .contact a{color:var(--blue);text-decoration:none}
     .contact a:hover{text-decoration:underline}
-    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+    .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:18px 0}
     .metric{padding:16px 18px;border-top:4px solid var(--blue)}
     .metric .label{color:var(--muted);font-size:13px}
     .metric .value{font-size:clamp(20px,2.5vw,29px);font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.25;margin-top:6px}
@@ -31,7 +32,7 @@
     .tab:hover,.tab:focus-visible{border-color:var(--blue);outline:2px solid var(--sky);outline-offset:2px}
     .tab[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
     .main{display:grid;grid-template-columns:1.12fr .88fr;gap:16px}
-    .panel{padding:22px}
+    .panel{padding:24px}
     .eyebrow{font-size:12px;color:var(--blue);letter-spacing:.08em;font-weight:700;margin-bottom:7px}
     .pitch{border-left:4px solid var(--gold);background:#fff8ea;padding:13px 16px;margin:12px 0 16px;border-radius:0 8px 8px 0}
     .pitch p{margin:0}
@@ -74,6 +75,19 @@
     .photo-panel figcaption{font-size:12px;color:var(--muted);margin-top:7px}
     .photo-panel p{margin-bottom:10px}
     .photo-panel .small{color:var(--muted);font-size:13px;margin-bottom:0}
+    .tour-panel{margin-top:16px;display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:start}
+    .tour-panel ul{margin:10px 0 0;padding-left:1.25em}
+    .tour-panel li{margin:7px 0}
+    .service-box{padding:18px;border-radius:14px;background:linear-gradient(145deg,#17364d,#176c70);color:#fff}
+    .service-box h3{color:#fff}
+    .service-box p{margin-bottom:12px;color:#dcebea;font-size:13px}
+    .service-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .service-tags span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.14);font-size:13px;font-weight:700}
+    .cert-panel{margin-top:16px}
+    .cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .cert-card{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f8fbfb}
+    .cert-card img{display:block;width:100%;height:210px;object-fit:contain;background:#fff}
+    .cert-card figcaption{padding:12px 14px;color:var(--navy);font-size:13px;font-weight:700}
     .timeline-panel{margin-top:16px}
     .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
     .job{border-top:1px solid var(--line);padding:12px 0;break-inside:avoid}
@@ -82,37 +96,39 @@
     .job .description{font-size:13px;color:var(--muted);margin:3px 0 0}
     .job.emphasis{border-top:3px solid var(--blue);padding-top:10px}
     .source{font-size:12px;color:var(--muted);margin:16px 0 0}
-    @media(max-width:820px){header{display:block}.contact{margin-top:14px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.main{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{padding:14px}header,.panel{padding:18px}.metrics{gap:9px}.metric{padding:12px}.timeline{grid-template-columns:1fr}.chart-note{min-height:0}.tenure-row{grid-template-columns:minmax(105px,145px) minmax(0,1fr) 45px;gap:6px;padding:5px}.tenure-name{font-size:12px}.tenure-months{font-size:12px}.photo-panel{grid-template-columns:1fr}.photo-frame{width:min(100%,260px);height:270px}}
+    @media(max-width:900px){header{grid-template-columns:auto 1fr}.contact{grid-column:1/-1;margin-top:4px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.main{grid-template-columns:1fr}.tour-panel{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{padding:14px}header,.panel{padding:18px}.profile-photo{width:84px;height:84px}.metrics{grid-template-columns:1fr;gap:9px}.metric{padding:12px}.timeline{grid-template-columns:1fr}.chart-note{min-height:0}.tenure-row{grid-template-columns:minmax(105px,145px) minmax(0,1fr) 45px;gap:6px;padding:5px}.tenure-name{font-size:12px}.tenure-months{font-size:12px}.photo-panel{grid-template-columns:1fr}.photo-frame{width:min(100%,260px);height:270px}.cert-grid{grid-template-columns:1fr}.cert-card img{height:auto;max-height:280px}}
     @media print{body{background:var(--white)}.wrap{max-width:none;padding:0}header,.panel,.metric{box-shadow:none}.tabs{display:none}.source{color:#444}.job{break-inside:avoid}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
+      <img class="profile-photo" src="assets/profile.jpg" alt="曾語文 Rachel Tseng 個人照片">
       <div>
         <h1>曾語文 Rachel Tseng</h1>
-        <p class="subtitle">國際業務 × 旅遊服務 × 客戶溝通｜職涯經驗總覽</p>
+        <p class="subtitle">國際業務 × 旅遊假日副業 × 安檢與職安｜跨文化溝通與現場執行</p>
       </div>
       <div class="contact">
-        <div>高雄市鳳山區</div>
+        <div>高雄市｜可到職日：面議</div>
         <div><a href="tel:+886963059701">0963-059-701</a></div>
         <div><a href="mailto:yuwen067099@gmail.com">yuwen067099@gmail.com</a></div>
-        <div>輔仁大學 英國語言文學系</div>
-        <div><a href="https://photos.google.com/album/AF1QipPkc1gTopg9-Cx3uC7FwTAAq95y4LLZsOAbwLs/photo/AF1QipNokOcStYuOedUS5sbitP4EsBgGtjphYoplij4/edit" target="_blank" rel="noopener noreferrer">查看個人照片（Google 相簿）↗</a></div>
+        <div>輔仁大學 英國語文學系</div>
       </div>
     </header>
 
     <section class="metrics" aria-label="履歷數據">
-      <div class="metric"><div class="label">累積任職期間</div><div class="value">13 年 3 個月</div><div class="detail">8 段工作經歷，共 159 個月</div></div>
-      <div class="metric"><div class="label">旅遊行銷與領隊</div><div class="value">7 年 4 個月</div><div class="detail">88 個月</div></div>
+      <div class="metric"><div class="label">跨領域工作經驗</div><div class="value">近 14 年</div><div class="detail">各領域年資可能重疊，不直接相加</div></div>
       <div class="metric"><div class="label">國貿與國外業務</div><div class="value">5 年 11 個月</div><div class="detail">71 個月</div></div>
-      <div class="metric"><div class="label">海外實務</div><div class="value">捷克展覽</div><div class="detail">2005 INVEX；另曾赴加拿大進修 1 年</div></div>
+      <div class="metric"><div class="label">旅遊行銷與領隊</div><div class="value">7 年 4 個月</div><div class="detail">88 個月｜假日副業</div></div>
+      <div class="metric"><div class="label">安檢</div><div class="value">3 年</div><div class="detail">國聯保全｜2021/06–2025/08</div></div>
+      <div class="metric"><div class="label">職業安全</div><div class="value">8 個月</div><div class="detail">晨達企業｜2025/09–2026/04</div></div>
     </section>
 
     <nav class="tabs" aria-label="面試主軸">
       <button class="tab" type="button" data-domain="trade" aria-pressed="true">國際業務／國貿</button>
       <button class="tab" type="button" data-domain="tourism" aria-pressed="false">旅遊行銷／領隊</button>
+      <button class="tab" type="button" data-domain="safety" aria-pressed="false">安檢／職業安全</button>
       <button class="tab" type="button" data-domain="cs" aria-pressed="false">客戶成功／專案協調</button>
       <button class="tab" type="button" data-domain="ai" aria-pressed="false">AI 內容企劃</button>
       <button class="tab" type="button" data-domain="all" aria-pressed="false">跨域整合</button>
@@ -128,19 +144,19 @@
       </section>
 
       <section class="panel" aria-labelledby="chart-heading">
-        <div class="chart-title"><h2 id="chart-heading">已列工作年資結構</h2><span class="caption">依起訖月份計算</span></div>
+        <div class="chart-title"><h2 id="chart-heading">國貿與旅遊專長年資</h2><span class="caption">旅遊為假日副業，期間可能重疊</span></div>
         <div class="chart focus-trade" id="experience-chart" role="img" aria-label="旅遊行銷與領隊88個月，占55.3%；國貿與國外業務71個月，占44.7%"><div class="segment tour"></div><div class="segment trade"></div></div>
         <div class="legend">
           <div class="legend-item"><span class="legend-name"><i class="swatch tour" aria-hidden="true"></i>旅遊行銷／領隊</span><strong>88 月・55.3%</strong></div>
           <div class="legend-item"><span class="legend-name"><i class="swatch trade" aria-hidden="true"></i>國貿／國外業務</span><strong>71 月・44.7%</strong></div>
         </div>
-        <p class="chart-note" id="chart-note">目前主軸對應國貿與國外業務 71 個月。這是任職期間，不是個人業績或能力評分。</p>
+        <p class="chart-note" id="chart-note">目前主軸對應國貿與國外業務 71 個月。圖表用於呈現專長結構，不能直接加總推估總年資。</p>
       </section>
     </main>
 
     <section class="panel photo-panel" aria-labelledby="photo-title">
       <figure>
-        <div class="photo-frame"><img src="./rachel-invex-2005.jpg" alt="曾語文在展覽攤位的工作照片" loading="lazy"></div>
+        <div class="photo-frame"><img src="assets/working-photos/invex-portrait.jpg" alt="曾語文在捷克 INVEX 展覽攤位的工作照片" loading="lazy"></div>
         <figcaption>工作照｜2005 年捷克 INVEX 展</figcaption>
       </figure>
       <div>
@@ -148,6 +164,35 @@
         <h2 id="photo-title">海外參展與產品展示</h2>
         <p>在訊揚企業擔任國外業務期間，參與 2005 年捷克 INVEX 展。這張工作照可搭配展位接待、產品介紹與海外客戶溝通經驗，向面試官說明當時的實務工作。</p>
         <p class="small">照片與你先前提供的《WORKING PHOTOS.pdf》內容相互對應。</p>
+      </div>
+    </section>
+
+    <section class="panel tour-panel" aria-labelledby="tour-title">
+      <div>
+        <div class="eyebrow">旅遊專業與雙語資格</div>
+        <h2 id="tour-title">旅遊領隊與雙語服務</h2>
+        <h3>英語、華語導遊人員執業證</h3>
+        <ul>
+          <li>旅遊業相關經驗 88 個月，約 7 年 4 個月，並以假日副業方式執行。</li>
+          <li>負責團體帶領、行程執行與旅客服務。</li>
+          <li>處理行程變更、突發狀況及跨單位協調。</li>
+          <li>將旅客需求轉化為清楚、可執行的安排。</li>
+        </ul>
+      </div>
+      <div class="service-box">
+        <h3>服務能力</h3>
+        <p>證照用途：呈現雙語導覽資格與旅遊專業背景。</p>
+        <div class="service-tags"><span>現場應變</span><span>同理溝通</span><span>雙語說明</span><span>流程掌握</span></div>
+      </div>
+    </section>
+
+    <section class="panel cert-panel" aria-labelledby="cert-title">
+      <div class="eyebrow">資格與學習佐證</div>
+      <h2 id="cert-title">照片與證書</h2>
+      <div class="cert-grid">
+        <figure class="cert-card"><img src="assets/tour-guide-license.jpg" alt="英語、華語導遊人員執業證"><figcaption>英語、華語導遊人員執業證</figcaption></figure>
+        <figure class="cert-card"><img src="assets/occupational-safety-training.jpg" alt="甲種職業安全衛生業務主管訓練證書，個人識別資訊已遮蔽"><figcaption>甲種職業安全衛生業務主管訓練</figcaption></figure>
+        <figure class="cert-card"><img src="assets/ai-training-certificate-redacted.png" alt="全方位 AI 影音行銷人才養成班結訓證書，身分證字號已遮蔽"><figcaption>AI 影音行銷人才養成班｜156 小時</figcaption></figure>
       </div>
     </section>
 
@@ -170,16 +215,18 @@
     <section class="panel timeline-panel" aria-labelledby="timeline-title">
       <h2 id="timeline-title">工作經歷時間軸</h2>
       <div class="timeline" id="timeline">
-        <div class="job" data-kind="tourism"><div class="date">2019/07–2020/02・8 個月</div><div class="role">大地假期旅行社｜業務／領隊</div><p class="description">旅遊產品推廣、客戶溝通、帶團與行程執行。</p></div>
-        <div class="job" data-kind="tourism"><div class="date">2017/09–2019/06・22 個月</div><div class="role">南和國際旅行社｜領隊／行銷</div><p class="description">行程執行、旅客服務及現場協調。</p></div>
+        <div class="job" data-kind="safety"><div class="date">2025/09/01–2026/04/30・8 個月</div><div class="role">晨達企業股份有限公司｜工安</div><p class="description">處理工單，協助現場師傅作業與安全事項追蹤；支援現場溝通及工作執行。</p></div>
+        <div class="job" data-kind="safety"><div class="date">2021/06–2025/08</div><div class="role">國聯保全｜安檢人員</div><p class="description">累積 3 年安檢實務經驗，執行安檢值勤、現場安全維護與異常回應。</p></div>
+        <div class="job" data-kind="tourism"><div class="date">2019/07–2020/02・8 個月</div><div class="role">大地假期旅行社｜假日副業・業務／領隊</div><p class="description">旅遊產品推廣、客戶溝通、帶團與行程執行。</p></div>
+        <div class="job" data-kind="tourism"><div class="date">2017/09–2019/06・22 個月</div><div class="role">南和國際旅行社｜假日副業・領隊／行銷</div><p class="description">行程執行、旅客服務及現場協調。</p></div>
         <div class="job" data-kind="trade"><div class="date">2015/05–2016/08・16 個月</div><div class="role">瑞子發五金有限公司｜國貿業務</div><p class="description">開發海外客戶、維護既有客戶關係。</p></div>
         <div class="job" data-kind="trade"><div class="date">2013/01–2014/06・18 個月</div><div class="role">建順實業有限公司｜國貿人員</div><p class="description">進出口作業；PE 伸縮膜進口與塑鋼帶外銷。</p></div>
-        <div class="job" data-kind="tourism"><div class="date">2008/03–2012/12・58 個月</div><div class="role">南和國際旅行社｜領隊／行銷</div><p class="description">帶團、旅客服務及旅遊產品推廣。</p></div>
+        <div class="job" data-kind="tourism"><div class="date">2008/03–2012/12・58 個月</div><div class="role">南和國際旅行社｜假日副業・領隊／行銷</div><p class="description">帶團、旅客服務及旅遊產品推廣。</p></div>
         <div class="job" data-kind="trade"><div class="date">2007/09–2007/12・4 個月</div><div class="role">驄豪科技｜國貿人員</div><p class="description">足弓墊海外客戶開發及中東經銷合作。</p></div>
         <div class="job" data-kind="trade"><div class="date">2005/08–2007/07・24 個月</div><div class="role">訊揚企業｜國外業務</div><p class="description">海外客戶維護、電腦 Cable 產品與捷克 INVEX 參展。</p></div>
         <div class="job" data-kind="trade"><div class="date">2004/07–2005/03・9 個月</div><div class="role">聖傑自動科技有限公司｜貿易專員</div><p class="description">Bluetooth 耳機、GPS 支架推廣及英文客戶溝通。</p></div>
       </div>
-      <p class="source">資料依提供的履歷及《WORKING PHOTOS.pdf》整理。年資按每段起訖月份含首尾月加總；AI 內容企劃缺少任職日期，未併入年資。</p>
+      <p class="source">資料依提供的履歷、工作照片及證書整理。旅遊工作為假日副業，各領域期間可能重疊，因此不直接加總推估總年資。</p>
     </section>
   </div>
 
@@ -194,10 +241,17 @@
       },
       tourism: {
         title: '旅遊行銷／領隊',
-        pitch: '我累積 7 年 4 個月的旅遊行銷與領隊經驗，熟悉旅客溝通、行程執行和現場協調。帶團工作讓我能在行程變動時保持彈性，並持續照顧旅客需求。',
-        evidence: ['在南和國際旅行社有兩段任職經歷，合計 80 個月。','於大地假期旅行社從事業務與領隊工作 8 個月。','工作內容涵蓋帶團、旅遊產品推廣、旅客服務和現場問題處理。'],
-        chart: '目前主軸對應旅遊行銷與領隊 88 個月。履歷尚未提供團數或旅客人次。',
+        pitch: '我以假日副業方式累積 7 年 4 個月的旅遊行銷與領隊經驗，熟悉旅客溝通、行程執行和現場協調。帶團工作讓我能在行程變動時保持彈性，並持續照顧旅客需求。',
+        evidence: ['持有英語、華語導遊人員執業證。','在南和國際旅行社有兩段經歷，合計 80 個月。','於大地假期旅行社從事業務與領隊工作 8 個月。'],
+        chart: '旅遊行銷與領隊經驗共 88 個月，屬假日副業；期間可能與其他工作重疊。',
         highlight: 'tourism'
+      },
+      safety: {
+        title: '安檢／職業安全',
+        pitch: '我具備 3 年安檢實務經驗，並於晨達企業累積 8 個月工安資歷。熟悉安檢值勤、現場安全維護、工單處理、安全事項追蹤及異常回應。',
+        evidence: ['國聯保全安檢人員：2021/06–2025/08，累積 3 年安檢實務經驗。','晨達企業工安：2025/09/01–2026/04/30，共 8 個月。','完成甲種職業安全衛生業務主管安全衛生教育訓練。'],
+        chart: '安檢與職安屬近期現場安全經驗，未併入國貿與旅遊專長比例圖。',
+        highlight: 'safety'
       },
       cs: {
         title: '客戶成功／專案協調',
@@ -210,14 +264,14 @@
         title: 'AI 內容企劃',
         pitch: '我近期持續練習以 AI 協助短影音腳本、分鏡、雙語字幕與內容企劃，也希望把英文與旅遊、業務經驗轉化成有實務脈絡的內容。',
         evidence: ['已規劃短影音口白、分鏡與雙語字幕。','可將中文與英文內容整理成適合短影音呈現的形式。','履歷尚未提供 AI 內容職務的任職日期或可量化成效。'],
-        chart: 'AI 內容企劃是近期技能方向，目前未計入 159 個月的工作年資。',
+        chart: 'AI 內容企劃是近期技能方向，目前未單獨計入工作年資。',
         highlight: 'none'
       },
       all: {
         title: '跨域整合',
-        pitch: '我累積 13 年 3 個月的任職期間，包含國貿與國外業務 5 年 11 個月、旅遊行銷與領隊 7 年 4 個月。這些經驗讓我能結合英文溝通、客戶維護、流程追蹤與現場應變。',
-        evidence: ['8 段任職經歷橫跨科技、五金、貿易與旅行社。','2005 年捷克 INVEX 海外展覽及加拿大一年英語進修。','兼具海外客戶溝通及旅客第一線服務經驗。'],
-        chart: '兩類已列工作期間合計 159 個月；圖中比例依實際履歷月份計算。',
+        pitch: '我具備近 14 年跨領域工作經驗，包含國貿與國外業務、旅遊假日副業、安檢及職業安全。這些歷練讓我能結合英文溝通、客戶維護、流程追蹤與現場應變。',
+        evidence: ['國貿與國外業務 5 年 11 個月；旅遊行銷與領隊 7 年 4 個月。','3 年安檢實務經驗及 8 個月工安資歷。','2005 年捷克 INVEX 海外展覽及加拿大一年英語進修。'],
+        chart: '圖中僅比較國貿與旅遊兩項專長年資；旅遊為假日副業，各領域期間可能重疊。',
         highlight: 'all'
       }
     };
