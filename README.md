@@ -1,146 +1,167 @@
-# Yuwen AI Studio｜曾語文 Yuwen Tseng
+<p align="center">
+  <img src="assets/profile.jpg" width="150" alt="Yuwen Tseng profile photo" />
+</p>
 
-**AI Video Creator × English Education × Taiwan Travel × Interactive Resume**
+<h1 align="center">Yuwen AI Studio</h1>
 
-歡迎來到 **Yuwen AI Studio**。  
-這裡整理我的 AI 影音作品、英語教學內容、台灣旅遊短影音與互動式履歷。
+<p align="center">
+  <strong>AI Video Creator × English Education × Taiwan Travel</strong><br>
+  <em>Explore Taiwan with AI & a Smile!</em>
+</p>
 
-> **Yuwen｜Explore Taiwan with AI & a Smile!**
-
----
-
-## 👩 About Yuwen
-
-我是曾語文（Yuwen Tseng）。
-
-我的職涯橫跨：
-
-- 國際業務與海外客戶溝通
-- 台灣旅遊導覽與領隊工作
-- 職業安全衛生管理
-- 數位內容與社群行銷
-- AI 影音製作
-- 英語教學內容設計
-
-我希望把 **商務、旅遊、英文與 AI** 結合，製作有故事、有教育性，也能實際應用於品牌與教學的影音內容。
+<p align="center">
+  <a href="yuwen-resume-responsive.html"><strong>View Interactive Resume</strong></a>
+  &nbsp;•&nbsp;
+  <a href="yuwen-resume-a4-portfolio.html"><strong>View Portfolio Resume</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/yuwen067099-cmd/yuwen-ai-search-lab"><strong>AI Project Lab</strong></a>
+</p>
 
 ---
 
-## 🎬 Featured Projects
+## 👋 About Yuwen
 
-### 1. Yuwen Interactive Resume｜MV60
-60 秒互動式履歷，將我的工作經歷轉化成短影音故事。
+我是 **曾語文 Yuwen Tseng**，目前專注於把 **AI 影音、英語教學、台灣旅遊與個人品牌內容** 結合成可實際應用的作品。
 
-內容主軸：
+我的經歷橫跨：
 
-- International Business
-- Tour Guide & Tour Leader
-- Digital Marketing
+- International Business & Overseas Communication
+- Licensed Tour Guide & Tour Leader
+- Occupational Safety & EHS
+- Digital Content & Social Media
 - AI Video Production
-- Personal Branding
+- English Learning Content
+
+我希望把複雜資訊轉化成 **清楚、好懂、好看、可以直接使用的影音內容**。
 
 ---
 
-### 2. Yuwen Daily Funny English｜MV30
-以 **女性 Yuwen＋橘貓** 為固定角色的生活英語短影音系列。
+## 🎬 Featured Portfolio
 
-特色：
+### Yuwen Interactive Resume｜MV60
 
-- 30 秒直式短影音
-- 3 秒 Hook
-- 一集一個實用英文句型
-- 橘貓搞笑犯錯
-- Yuwen 即時糾正
-- 台灣日常與旅遊場景
-- AI 動畫與英文教學結合
+**60-second personal brand story**
+
+International Business → Tourism → Digital Marketing → AI Video → Personal Brand
+
+**Focus:** 讓面試官或合作對象在短時間內理解我的跨領域能力與創作方向。
 
 ---
 
-### 3. Taiwan Travel × AI
-使用 AI 將台灣旅遊景點、導覽故事與短影音結合。
+### Yuwen Daily Funny English｜MV30
 
-主題包含：
+以 **Yuwen＋橘貓** 為固定角色的生活英文短影音系列。
 
-- 老街與地方文化
-- 台灣景點介紹
-- 導遊情境英文
-- AI 旅遊短影音
-- 多語字幕內容
+- 30 秒直式 Short-form Video
+- 3-second Hook
+- One practical English phrase per episode
+- Funny orange-cat mistake
+- Yuwen correction
+- Taiwan daily-life setting
+- AI animation + English learning
+
+**Core idea:** Learn English through story, humor and repetition.
 
 ---
 
-### 4. AI English Education
-製作適合國小、國中與生活英文學習的 AI 教學內容。
+### Taiwan Travel × AI
 
-內容方向：
+將台灣旅遊導覽、地方文化與 AI 影像製作結合：
+
+- Taiwan attractions
+- Local culture
+- Travel English
+- Tour guide storytelling
+- AI-generated short videos
+- Multilingual subtitle design
+
+---
+
+### AI English Education
+
+AI 動畫英語教學內容方向：
 
 - English Grammar
 - Daily Conversation
 - Vocabulary Stories
 - Five Basic Sentence Patterns
-- AI Animated English Lessons
+- Elementary & Junior High English
+- AI Animated Lessons
 
 ---
 
-## 🧰 AI & Creative Tools
+## 🖼️ Visual Credentials
 
-常用工具：
+<p>
+  <img src="assets/ai-training-certificate-redacted.png" width="46%" alt="AI training certificate" />
+  <img src="assets/tour-guide-license.jpg" width="46%" alt="Tour guide license" />
+</p>
 
-- ChatGPT
-- Gemini
-- Canva
-- CapCut / 剪映
-- Kling
-- Runway
-- Midjourney
-- Flux
+These materials support my background in **AI training and professional tourism**.
 
-工作流程：
+---
+
+## 🧰 Creative Workflow
 
 **Idea → Script → Storyboard → Image → Animation → Voice → Subtitle → Short Video**
 
----
+Tools I commonly use:
 
-## 💼 Services
-
-Yuwen AI Studio 可製作：
-
-- AI 品牌短影音
-- 30 秒／60 秒 Reels、Shorts
-- AI 英語教學動畫
-- 台灣旅遊宣傳影片
-- 個人品牌履歷影片
-- AI 歌曲＋短影音
-- 分鏡腳本與 AI Prompt 設計
+`ChatGPT` · `Gemini` · `Canva` · `CapCut` · `Kling` · `Runway` · `Midjourney` · `Flux`
 
 ---
 
-## 📂 Resume Files
+## 💼 Yuwen AI Studio Services
 
-本 Repository 同時收錄互動式履歷與 A4 履歷版本：
+可發展與提供的內容製作服務：
 
-- `yuwen-resume-responsive.html`：互動式網頁履歷
-- `yuwen-resume-a4-business.html`：A4 商務版
-- `yuwen-resume-a4-editorial.html`：A4 編輯版
-- `yuwen-resume-a4-executive.html`：A4 專業商務版
-- `yuwen-resume-a4-portfolio.html`：A4 視覺實績版
+| Service | Deliverable |
+|---|---|
+| AI Short Video | 30s / 60s Reels & Shorts |
+| AI English Animation | Grammar / Vocabulary / Conversation |
+| Taiwan Travel Video | Destination & storytelling video |
+| Interactive Resume | Personal brand / job-search video |
+| Storyboard Design | Shot list + AI prompts |
+| AI Music Video | Song concept + short-form visual |
+| Social Content | Script + subtitles + short video concept |
 
-開啟 `index.html` 可進入主要互動式履歷。
+---
+
+## 📄 Resume Center
+
+### Interactive
+- [Responsive Interactive Resume](yuwen-resume-responsive.html)
+
+### A4 Versions
+- [Business Resume](yuwen-resume-a4-business.html)
+- [Editorial Resume](yuwen-resume-a4-editorial.html)
+- [Executive Resume](yuwen-resume-a4-executive.html)
+- [Portfolio Resume](yuwen-resume-a4-portfolio.html)
+
+---
+
+## 🚀 Project Links
+
+- [Yuwen Resume Repository](https://github.com/yuwen067099-cmd/yuwen-resume)
+- [Yuwen AI Search Lab](https://github.com/yuwen067099-cmd/yuwen-ai-search-lab)
+- YouTube Showcase — link to be added
+- Yuwen Travel Website — link to be added
+
+> 這兩個外部連結目前 Repository 裡沒有正式網址，因此先保留位置，避免放錯連結。
 
 ---
 
 ## 🌏 Brand Vision
 
-我希望透過 AI，讓：
-
 **Travel becomes a story.**  
 **English becomes easier.**  
 **Ideas become videos.**
 
----
+<p align="center">
+  <strong>Yuwen AI Studio</strong><br>
+  AI Video • English Education • Taiwan Travel
+</p>
 
-## ✨ Yuwen AI Studio
-
-**AI Video • English Education • Taiwan Travel**
-
-**Yuwen｜Explore Taiwan with AI & a Smile!**
+<p align="center">
+  <strong>Yuwen｜Explore Taiwan with AI & a Smile!</strong>
+</p>
