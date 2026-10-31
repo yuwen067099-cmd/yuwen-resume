@@ -32,7 +32,7 @@ footer{padding:34px 0 48px;color:var(--muted);text-align:center}
 <body>
 <div class="topbar"><div class="wrap nav">
   <div class="brand">Yuwen <span>AI Studio</span></div>
-  <div class="links"><a href="#work">作品</a><a href="#youtube">YouTube</a><a href="#pricing">接案</a><a href="#skills">能力</a><a href="#line">LINE</a><a href="#resume">履歷</a></div>
+  <div class="links"><a href="#work">作品</a><a href="#youtube">YouTube</a><a href="#pricing">接案</a><a href="#demo">製作示範</a><a href="#skills">能力</a><a href="#line">LINE</a><a href="#resume">履歷</a></div>
   <a class="btn" href="#resume">View Resume</a>
 </div></div>
 
@@ -101,6 +101,31 @@ footer{padding:34px 0 48px;color:var(--muted);text-align:center}
       <div class="thumb"><img src="assets/working-photos/invex-portrait.jpg" alt="Taiwan travel and business video thumbnail"></div>
       <div class="videoBody"><span class="tag">TRAVEL × AI</span><h3>Storytelling Shorts</h3><p>旅行、導覽、職涯故事與 AI 影像整合的短影音作品。</p><span class="pending">YouTube link pending</span></div>
     </article>
+  </div>
+</div></section>
+
+
+<section id="demo"><div class="wrap">
+  <div class="titleRow reveal"><div><h2>AI Animation Production Demo｜原創商業示範</h2><p>展示製作能力與企劃交付範圍；非已完成的客戶委託作品。</p></div><span class="tag">CONCEPT / PRE-PRODUCTION</span></div>
+  <div class="card reveal">
+    <h3>作品集可展示能力</h3>
+    <p>原創腳本企劃、AI 角色一致性設計、六鏡頭分鏡、英文教學編寫、短影音動態提示詞、英文配音規劃及行銷字幕規劃。</p>
+    <h3>本次企劃交付</h3>
+    <p>兩支獨立 MV30 動畫企劃、12 組逐鏡英文字幕與口白、12 組生圖與動態提示詞、配樂音效規劃、Shorts 發布素材，以及一份商業作品示範提案。</p>
+    <p><strong>目前狀態：</strong>以上均為企劃與製作指令；尚未生成或上傳 MP4，亦未聯繫任何客戶。</p>
+    <h3>製作前統一檢查 <span id="demoProgress" class="tag">0/8</span></h3>
+    <div id="demoChecklist" style="display:grid;gap:9px;margin:12px 0 22px">
+      <label><input type="checkbox"> 原創腳本與英語教學內容確認</label>
+      <label><input type="checkbox"> AI 角色外觀一致性確認</label>
+      <label><input type="checkbox"> 六鏡頭分鏡與時長確認</label>
+      <label><input type="checkbox"> 逐鏡英文口白與字幕校對</label>
+      <label><input type="checkbox"> 生圖與動態提示詞確認</label>
+      <label><input type="checkbox"> 配樂、音效與素材授權確認</label>
+      <label><input type="checkbox"> 9:16 畫幅與字幕安全區檢查</label>
+      <label><input type="checkbox"> 發布素材與作品狀態標示確認</label>
+    </div>
+    <h3>素材授權與展示聲明</h3>
+    <p>僅使用原創虛構商家場景。未經授權不得使用補習班校徽、在地店家商標、客戶照片或其他第三方素材；不得將示範企劃宣稱為已完成的客戶委託作品。</p>
   </div>
 </div></section>
 
@@ -209,6 +234,8 @@ const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const demoChecks=document.querySelectorAll('#demoChecklist input[type="checkbox"]');
+demoChecks.forEach(check=>check.addEventListener('change',()=>{document.getElementById('demoProgress').textContent=Array.from(demoChecks).filter(x=>x.checked).length+'/8';}));
 </script>
 </body>
 </html>
